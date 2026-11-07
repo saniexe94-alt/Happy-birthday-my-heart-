@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7e7eb">
+<title>ڕۆژی لەدایکبوونی مەلەک 🎂</title>
+<style>
+:root{--pink:#d95b83;--deep:#9e315b;--ink:#56334d;--paper:#fffaf8;--soft:#f8e8ed}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Tahoma,"Arial",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 12%,#fff 0 2px,transparent 3px),linear-gradient(145deg,#f5e5e9,#fbeff0 55%,#f2dce4);display:flex;align-items:center;justify-content:center;padding:22px 14px;overflow-x:hidden}
+#pause{position:fixed;top:15px;left:15px;border:2px dashed #c87591;color:var(--deep);background:#fff8;border-radius:50%;width:43px;height:43px;font-size:17px;z-index:5}
+.wrap{width:min(100%,440px);min-height:650px;display:flex;align-items:center;justify-content:center;position:relative}
+.screen{width:100%;animation:appear .55s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.envelope{height:390px;position:relative;margin:30px 8px 0;background:linear-gradient(145deg,#f7cbd8,#eeb4c6);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);border-radius:8px;box-shadow:0 15px 35px #9d547033;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(32deg,transparent 49.5%,#eaaabd 50%),linear-gradient(-32deg,transparent 49.5%,#f5c5d3 50%);opacity:.95}
+.flap{position:absolute;top:0;left:0;width:100%;height:55%;background:#f9dce4;clip-path:polygon(0 0,100% 0,50% 100%);z-index:1}
+.seal{position:absolute;z-index:2;top:38%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:#c94d79;color:white;display:grid;place-items:center;font-size:30px;box-shadow:0 5px 12px #80324c44}
+.env-note{position:absolute;z-index:2;bottom:18px;text-align:center;color:#fff;font-size:13px;letter-spacing:2px}
+.paper{position:absolute;z-index:0;top:10%;left:7%;right:7%;height:75%;background:#fffaf7;border-radius:8px;display:flex;align-items:flex-start;justify-content:center;padding:30px 14px;color:#b74c74;text-align:center;font-weight:bold}
+.kicker{color:#bd4c73;font-size:14px;text-align:center;margin:0 0 17px;font-weight:bold}
+.card{background:rgba(255,250,248,.94);border:1px solid #f4dce4;border-radius:15px;padding:24px 20px 20px;box-shadow:0 12px 30px #8b4d6120;min-height:510px;display:flex;flex-direction:column;align-items:center;text-align:center}
+h1{font-size:25px;line-height:1.7;color:#a93662;margin:3px 0 15px}
+h2{font-size:21px;line-height:1.7;color:#a93662;margin:0 0 14px}
+.photo{width:190px;height:170px;background:linear-gradient(145deg,#fff,#f7e6eb);border:8px solid white;box-shadow:0 4px 16px #9c536322;display:grid;place-items:center;font-size:72px;margin:4px auto 20px;transform:rotate(-2deg);border-radius:4px}
+p{font-size:16px;line-height:2.05;margin:5px 0 14px;color:#53304b}
+.highlight{background:#ffe6a8;padding:4px 8px;border-radius:5px;color:#8b365a;font-weight:bold}
+.controls{display:flex;justify-content:space-between;gap:10px;width:100%;margin-top:auto;padding-top:18px}
+button.action{font-family:inherit;border:1.5px dashed #c85a80;color:#a83b67;background:#fff8f9;padding:10px 18px;border-radius:12px;font-weight:bold;font-size:14px;cursor:pointer}
+button.primary{background:#c94f7b;color:#fff;border:0;box-shadow:0 5px 12px #c94f7b33}
+.counter{font-size:12px;color:#bd7b91;margin-top:14px}
+.heart{font-size:37px;margin:0 0 12px;animation:beat 1.2s infinite}
+@keyframes beat{50%{transform:scale(1.16)}}
+.confetti{position:fixed;top:-15px;width:8px;height:13px;animation:fall 5s linear infinite;opacity:.7;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(650deg)}}
+.hidden{display:none!important}
+@media(max-height:720px){.wrap{min-height:590px}.card{min-height:480px;padding:18px 16px}.photo{height:135px;width:155px;font-size:60px}p{font-size:15px}}
+</style>
+</head>
+<body>
+<button id="pause" aria-label="دەنگ">♫</button>
+<div class="wrap">
+  <section class="screen" id="intro">
+    <p class="kicker">🎀 بۆ کچە خۆشەویستەکەم 🎀</p>
+    <div class="envelope" id="openEnvelope" role="button" tabindex="0" aria-label="نامەکە بکەرەوە">
+      <div class="paper">نامەیەکی تایبەت بۆ مەلەک 💌</div>
+      <div class="flap"></div><div class="seal">♥</div>
+      <div class="env-note">TAP TO OPEN</div>
+    </div>
+    <p style="text-align:center;margin-top:22px">کلیک لەسەر نامەکە بکە تا سوپڕایزەکەت ببینیت ✨</p>
+  </section>
+
+  <section class="screen hidden" id="pages">
+    <p class="kicker">🎂 ڕۆژی لەدایکبوونی مەلەک 🎂</p>
+    <article class="card">
+      <div class="heart" id="icon">🎂</div>
+      <h2 id="heading"></h2>
+      <div class="photo" id="picture">🎈</div>
+      <p id="message"></p>
+      <div class="controls">
+        <button class="action" id="prev">‹ پێشوو</button>
+        <button class="action primary" id="next">دواتر ›</button>
+      </div>
+      <div class="counter" id="counter"></div>
+    </article>
+  </section>
+
+  <section class="screen hidden" id="end">
+    <article class="card" style="justify-content:center">
+      <div class="heart">💗</div>
+      <h1>ساڵی نوێت پڕ لە خۆشی بێت، مەلەک!</h1>
+      <p>لەگەڵ هەموو خۆشەویستییەکەم،<br><strong>ئارێز</strong> 💌</p>
+      <div class="photo">🎂🌷</div>
+      <p class="highlight">هەمیشە شایانی جوانترین شتەکانی ژیانیت ✨</p>
+      <button class="action primary" id="again">دووبارە بیبینەوە ↻</button>
+    </article>
+  </section>
+</div>
+<script>
+const slides=[
+ {icon:"🎂",pic:"🎂",title:"ڕۆژی لەدایکبوونت پیرۆز بێت",text:"ئەمڕۆ ڕۆژێکی تایبەتە، چونکە ڕۆژی هاتنە دونیای کەسێکە کە بوونی لە ژیانمدا خۆشی و مانایەکی جوانی هێناوە. پیرۆزە مەلەکی جوانم! 💗"},
+ {icon:"🎁",pic:"🎀",title:"تۆ کەسێکی تایبەتیت",text:"هیوادارم ئەم ساڵەی نوێت پڕ بێت لە پێکەنین، ئارامی، سەرکەوتن و هەموو ئەو شتانەی دڵت دەیەوێت. هەرگیز لە خۆت و خەونەکانت دوور مەکەوە. 🌸"},
+ {icon:"🫶",pic:"🌷",title:"سوپاس بۆ بوونت",text:"سوپاس بۆ ئەوەی هەیت، بۆ ئەو پێکەنینانەی دەیهێنیتە سەر لێوم و بۆ ئەو ساتە جوانانەی لەگەڵت دروست دەبن. بوونت خۆی دیارییەکی گەورەیە. 🥹"},
+ {icon:"✨",pic:"⭐",title:"هیوای دڵم بۆ تۆ",text:"هیوامە هەر بەیانییەک بە دڵێکی ئارام هەستیت، هەر هەنگاوێکت بەرەو خەونەکانت بێت و هیچ شتێک نەتوانێت ئەو ڕووناکییەی ناو دڵت کەم بکاتەوە. 💫"},
+ {icon:"💌",pic:"💗",title:"نامەیەک لە ئارێزەوە",text:"مەلەک، لە ڕۆژی لەدایکبوونتدا دەمەوێت بزانیت کە چەند بوونت بۆم گرنگە. هیوادارم هەموو ئەو جوانی و خۆشییەی بە کەسانی دەوروبەرت دەیبەخشیت، چەندین قات بگەڕێتەوە بۆ خۆت. ❤️"},
+ {icon:"🥳",pic:"🎉",title:"ئەمڕۆ ڕۆژی تۆیە!",text:"بە پێکەنین و شادی ئەم ڕۆژە بەسەر ببە، چونکە تۆ شایانی هەموو ساتە جوانەکانیت. ساڵی نوێت پڕ لە بەختەوەری بێت، کچە جوانەکەم! 🥳"},
+ {icon:"💞",pic:"🦋",title:"هەمیشە بدرەوشێوە",text:"با هەموو ئەو شتانەی لە دڵتدان یەک بە یەک ببنە ڕاستی. هەمیشە بە هەمان دڵی پاک و ڕۆحی جوانەوە بمێنەوە. تۆ شایانی باشترینیت. 🌹"},
+ {icon:"❤️",pic:"💐",title:"کۆتا وشە...",text:"جارێکی تر ڕۆژی لەدایکبوونت پیرۆز بێت مەلەک. لە دڵەوە هیوای تەندروستی، ئارامی، خۆشی و ساڵانێکی پڕ لە یادەوەریی جوانت بۆ دەخوازم. بە خۆشییەوە، ئارێز. 💗"}
+];
+let index=0;
+const $=id=>document.getElementById(id);
+function showSlide(){
+ const s=slides[index];$("icon").textContent=s.icon;$("picture").textContent=s.pic;$("heading").textContent=s.title;$("message").textContent=s.text;
+ $("counter").textContent=`${index+1} / ${slides.length}`;
+ $("prev").style.visibility=index===0?"hidden":"visible";
+ $("next").textContent=index===slides.length-1?"کۆتایی ✨":"دواتر ›";
+}
+function open(){ $("intro").classList.add("hidden");$("pages").classList.remove("hidden");showSlide(); }
+$("openEnvelope").addEventListener("click",open);
+$("openEnvelope").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open();}});
+$("next").onclick=()=>{if(index<slides.length-1){index++;showSlide()}else{$("pages").classList.add("hidden");$("end").classList.remove("hidden")}};
+$("prev").onclick=()=>{if(index>0){index--;showSlide()}};
+$("again").onclick=()=>{index=0;$("end").classList.add("hidden");$("intro").classList.remove("hidden")};
+for(let i=0;i<22;i++){let c=document.createElement("i");c.className="confetti";c.style.left=Math.random()*100+"vw";c.style.animationDelay=Math.random()*5+"s";c.style.animationDuration=(4+Math.random()*4)+"s";c.style.background=["#e88ba9","#f2c66d","#c9a4d8","#f6a7b8"][i%4];document.body.appendChild(c)}
+</script>
+</body></html>
